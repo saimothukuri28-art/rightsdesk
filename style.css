@@ -420,29 +420,41 @@ button,
   border-radius: 8px !important;
 }
 /* --- PRINT STYLING --- */
+/* --- PRINT STYLING --- */
 @media print {
-  /* Hide all website elements by default */
-  body * {
-    visibility: hidden;
+  /* Hide page elements during print */
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
   }
 
-  /* Reveal ONLY the letter paper and its child text */
+  .topbar, 
+  .intake, 
+  .rights-container, 
+  .escalation-container, 
+  .action-buttons, 
+  .letter-stamp, 
+  .empty-state, 
+  footer, 
+  .settings-panel, 
+  .demo-btn {
+    display: none !important;
+  }
+
+  /* Force the letter paper to show up clean and full-page */
+  .result, 
+  .result-content, 
+  .letter-container, 
   .letter-paper, 
-  .letter-paper * {
-    visibility: visible;
-  }
-
-  /* Force letter paper to fill the page cleanly without shadows or borders */
-  .letter-paper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
+  .letter-body {
+    display: block !important;
+    visibility: visible !important;
     box-shadow: none !important;
     border: none !important;
     background: #ffffff !important;
     color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
   }
 }
