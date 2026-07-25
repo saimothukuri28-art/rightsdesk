@@ -419,3 +419,30 @@ button,
 .primary-btn {
   border-radius: 8px !important;
 }
+/* --- PRINT STYLING --- */
+@media print {
+  /* Hide all website elements by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Reveal ONLY the letter paper and its child text */
+  .letter-paper, 
+  .letter-paper * {
+    visibility: visible;
+  }
+
+  /* Force letter paper to fill the page cleanly without shadows or borders */
+  .letter-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
