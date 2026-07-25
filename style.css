@@ -395,3 +395,27 @@ textarea:focus, input:focus, select:focus {
     border: none;
   }
 }
+/* --- Sleek Rounded Corners Override --- */
+
+/* Main Containers & Cards */
+.intake, 
+.result, 
+.settings-panel,
+.letter-paper {
+  border-radius: 12px !important;
+}
+
+/* Form Inputs, Textareas, and Select Dropdowns */
+input, 
+textarea, 
+select {
+  border-radius: 8px !important;
+}
+
+/* All Buttons */
+button,
+.demo-btn,
+.secondary-btn,
+.primary-btn {
+  border-radius: 8px !important;
+}
