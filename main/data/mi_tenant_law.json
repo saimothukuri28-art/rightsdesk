@@ -1,0 +1,44 @@
+{
+  "jurisdiction": "Michigan",
+  "statutes": [
+    {
+      "mcl": "MCL 554.139",
+      "title": "Covenants of Habitability and Repair",
+      "summary": "Landlord covenants that the premises are fit for the use intended by the parties and will keep the premises in reasonable repair during the term of the lease.",
+      "applies_to": ["heat", "hot water", "plumbing", "structural integrity", "habitability"],
+      "remedies": ["written notice", "reasonable time to repair", "repair and deduct", "escrow rent"]
+    },
+    {
+      "mcl": "MCL 600.2918",
+      "title": "Anti-Lockout and Lockout Damages",
+      "summary": "Prohibits landlords from forcefully excluding tenants, changing locks, or shutting off utilities (heat, water, electric) to force a tenant out.",
+      "applies_to": ["utility shutoff", "illegal eviction", "lockout"],
+      "remedies": ["treble damages", "possession recovery"]
+    },
+    {
+      "mcl": "MCL 554.601-554.616",
+      "title": "Landlord and Tenant Relationships (Security Deposits)",
+      "summary": "Regulates security deposit limits (max 1.5 months rent), notice of damages, and timeline for deposit return (30 days).",
+      "applies_to": ["security deposit", "move-out deductions"],
+      "remedies": ["itemized list of damages within 30 days"]
+    }
+  ],
+  "escalation_steps": [
+    {
+      "step": "1. Formal Written Notice",
+      "detail": "Send a dated, written notice citing MCL 554.139 via certified mail or trackable delivery to create a paper trail."
+    },
+    {
+      "step": "2. Local Code Enforcement Inspection",
+      "detail": "Contact municipal housing inspectors (e.g., City of Troy Building & Code Enforcement) to conduct an official inspection and issue violations."
+    },
+    {
+      "step": "3. State Attorney General Complaint",
+      "detail": "File a consumer protection complaint with the Michigan Attorney General's office if widespread or persistent habitability failures occur."
+    },
+    {
+      "step": "4. Legal Action & Rent Escrow",
+      "detail": "Consult Michigan Legal Help or an attorney regarding depositing rent into an escrow account or bringing action in district court."
+    }
+  ]
+}
