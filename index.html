@@ -33,13 +33,15 @@
     <h1>What's going on with your rental?</h1>
     <p class="lede">Describe the problem in your own words. RightsDesk will identify your rights under Michigan law and draft the letter for you.</p>
 
-    <form id="intakeForm">
+<form id="intakeForm">
+      <div class="demo-bar">
+        <button type="button" id="demoBtn" class="demo-btn">⚡ Try sample scenario (Troy, MI)</button>
+      </div>
+
       <div class="field">
         <label for="issue">The problem</label>
         <textarea id="issue" rows="4" placeholder="e.g. My heat has been out for 3 weeks. I've texted my landlord twice and nothing's happened." required></textarea>
-      </div>
-
-      <div class="field-row">
+      </div>      <div class="field-row">
         <div class="field">
           <label for="startDate">When did it start?</label>
           <input type="date" id="startDate">

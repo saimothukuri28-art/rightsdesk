@@ -231,7 +231,21 @@ function safeJsonParse(str) {
     return JSON.parse(cleaned);
   }
 }
-
+// Demo scenario auto-fill
+const demoBtn = document.getElementById("demoBtn");
+if (demoBtn) {
+  demoBtn.addEventListener("click", () => {
+    document.getElementById("issue").value = "Our main building heat went completely out 3 weeks ago during freezing weather. I've sent two text messages to management, but nobody has come to inspect or fix it. The apartment temperature is consistently below 55 degrees.";
+    document.getElementById("startDate").value = "2026-07-01";
+    document.getElementById("notifiedBefore").value = "verbal";
+    document.getElementById("tenantName").value = "Alex Morgan";
+    document.getElementById("landlordName").value = "Residences of Troy Apartments Management";
+    document.getElementById("address").value = "2865 Troy Center Dr, Troy, MI 48084";
+    if (typeof setStatus === "function") {
+      setStatus("Sample scenario loaded! Click 'Analyze & draft my letter'.");
+    }
+  });
+}
 function renderResult(data, payload) {
   emptyState.classList.add("hidden");
   resultContent.classList.remove("hidden");
@@ -261,16 +275,33 @@ function renderResult(data, payload) {
       </div>
     </div>
   `).join("");
+  // --- PASTE STARTS HERE ---
+  const copyBtn = document.getElementById("copyBtn");
+  if (copyBtn) {
+    copyBtn.onclick = () => {
+      navigator.clipboard.writeText(data.letter);
+      const originalText = copyBtn.textContent;
+      copyBtn.textContent = "✓ Copied!";
+      if (typeof setStatus === "function") setStatus("Letter copied to clipboard!");
+      setTimeout(() => {
+        copyBtn.textContent = originalText;
+      }, 2000);
+    };
+  }
 
-  // Button actions
-  document.getElementById("copyBtn").onclick = () => {
-    navigator.clipboard.writeText(data.letter);
-    setStatus("Letter copied to clipboard!");
-  };
+  const printBtn = document.getElementById("printBtn");
+  if (printBtn) {
+    printBtn.onclick = () => {
+      window.print();
+    };
+  }
 
-  document.getElementById("emailBtn").onclick = () => {
-    const subject = encodeURIComponent("Formal Notice: Lease Unit Repair Request");
-    const body = encodeURIComponent(data.letter);
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
-  };
+  const emailBtn = document.getElementById("emailBtn");
+  if (emailBtn) {
+    emailBtn.onclick = () => {
+      const subject = encodeURIComponent("Formal Notice: Lease Unit Repair Request");
+      const body = encodeURIComponent(data.letter);
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    };
+  }
 }
